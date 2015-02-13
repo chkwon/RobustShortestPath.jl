@@ -1,6 +1,5 @@
 using RobustShortestPath
 
-
 data = [
  1   4  79   31  66  28;
  1   2  59   97  41  93;
