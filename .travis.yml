@@ -16,4 +16,4 @@ before_install:
 script:
   - julia -e 'Pkg.init(); Pkg.clone(pwd()); Pkg.add("Graphs"); Pkg.test("RobustShortestPath")'
 after_success:
-- julia -e 'cd(Pkg.dir("RobustShortestPath")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
+  - julia -e 'cd(Pkg.dir("RobustShortestPath")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
