@@ -120,7 +120,5 @@ The result should look like:
 See [runtest.jl](https://github.com/chkwon/RobustShortestPath.jl/blob/master/test/runtests.jl) for more information.
 
 
-
-
 # Contributor
 This package is written and maintained by [Changhyun Kwon](http://www.chkwon.net).
