@@ -4,7 +4,7 @@
 
 Robust Shortest Path Finder for [the Julia Language](http://julialang.org).
 
-This package provides functions to find the robust shortest path.
+This package provides functions to find robust shortest paths. Please see the reference papers below.
 
 <!--
 # get_shortest_path
