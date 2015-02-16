@@ -14,12 +14,13 @@ This provides an interface to Dijkstra's method from the [Graphs.jl](https://git
 -->
 # Install
 
-This package uses [Graphs.jl](https://github.com/JuliaLang/Graphs.jl).
-
 ```julia
-julia> Pkg.add("Graphs")
 julia> Pkg.clone("https://github.com/chkwon/RobustShortestPath.jl.git")
 ```
+
+This will also install [Graphs.jl](https://github.com/JuliaLang/Graphs.jl), if you don't have it installed in your Julia system already.
+
+
 
 # get_robust_path
 
