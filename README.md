@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/chkwon/RobustShortestPath.jl.svg?branch=master)](https://travis-ci.org/chkwon/RobustShortestPath.jl)
 [![Coverage Status](https://coveralls.io/repos/chkwon/RobustShortestPath.jl/badge.svg)](https://coveralls.io/r/chkwon/RobustShortestPath.jl)
+[![RobustShortestPath](http://pkg.julialang.org/badges/RobustShortestPath_release.svg)](http://pkg.julialang.org/?pkg=RobustShortestPath&ver=release)
 
 Robust Shortest Path Finder for [the Julia Language](http://julialang.org).
 
