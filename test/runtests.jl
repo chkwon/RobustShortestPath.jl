@@ -72,12 +72,12 @@ end
 println("----------------------------------------------------")
 println("Two Coefficient Case")
 
-Gamma_u=2
-Gamma_v=3
-
-(robust_path, robust_x, worst_case_cost) = get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v, origin, destination)
-
-println("(Gamma_u,Gamma_v)=($Gamma_u,$Gamma_v): Robust Path is $(robust_path') and the worst-case cost is $worst_case_cost")
+for Gamma_u=1:5
+    for Gamma_v=1:5
+        (robust_path, robust_x, worst_case_cost) = get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v, origin, destination)
+        println("(Gamma_u,Gamma_v)=($Gamma_u,$Gamma_v): Robust Path is $(robust_path') and the worst-case cost is $worst_case_cost")
+    end
+end
 
 
 
