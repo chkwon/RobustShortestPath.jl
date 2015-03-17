@@ -126,5 +126,14 @@ The result should look like:
 See [runtest.jl](https://github.com/chkwon/RobustShortestPath.jl/blob/master/test/runtests.jl) for more information.
 
 
+# get_shortest_path
+
+This package also provides an interface to `dijkstra_shortest_paths` of `Graphs.jl`.
+
+```julia
+path, x = get_shortest_path(start_node, end_node, link_length, origin, destination)
+```
+
+
 # Contributor
 This package is written and maintained by [Changhyun Kwon](http://www.chkwon.net).
