@@ -5,7 +5,7 @@ function create_graph(start_node, end_node, link_length)
 	no_arc = length(start_node)
 
 	graph = Graph(no_node)
-	distmx = zeros(no_node, no_node)
+	distmx = Inf*ones(no_node, no_node)
 	for i=1:no_arc
 		add_edge!(graph, start_node[i], end_node[i])
 		distmx[start_node[i], end_node[i]] = link_length[i]
