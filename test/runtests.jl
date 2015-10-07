@@ -80,8 +80,11 @@ for Gamma_u=1:5
 end
 
 
+test_Gamma_u = 5
+test_Gamma_v = 5
+(robust_path, robust_x, worst_case_cost) = get_robust_path_two(start_node, end_node, p, q, c, d, test_Gamma_u, test_Gamma_v, origin, destination)
 
-
+@assert worst_case_cost==32291.0
 
 
 

@@ -11,8 +11,9 @@ function get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v,
   # Step 0
   diag = p.*q + q.*c + q.*d
   idx = sortperm(diag, rev=true)
-  Theta = Array((Float64, Float64),1)
-  Theta = [(0,0)]
+  # Theta = Array((Float64, Float64),1)
+  # Theta = Array{Tuple{Float64, Float64}}(1)
+  Theta = [(0.0,0.0)]
 
   for t=1:no_arc
     ij = idx[t]
