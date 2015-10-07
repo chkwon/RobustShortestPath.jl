@@ -5,8 +5,8 @@ function get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v,
   @assert length(start_node)==length(c)
   @assert length(start_node)==length(d)
 
-  graph = create_graph(start_node, end_node)
-  no_arc = num_edges(graph)
+  no_arc = length(start_node)
+
 
   # Step 0
   diag = p.*q + q.*c + q.*d

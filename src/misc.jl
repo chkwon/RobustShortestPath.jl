@@ -1,23 +1,25 @@
-function create_graph(start_node, end_node)
+function create_graph(start_node, end_node, link_length)
 	@assert length(start_node)==length(end_node)
 
 	no_node = max(maximum(start_node), maximum(end_node))
 	no_arc = length(start_node)
 
-	graph = simple_inclist(no_node)
+	graph = Graph(no_node)
+	distmx = zeros(no_node, no_node)
 	for i=1:no_arc
 		add_edge!(graph, start_node[i], end_node[i])
+		distmx[start_node[i], end_node[i]] = link_length[i]
 	end
-	return graph
+	return graph, distmx
 end
 
 function get_shortest_path(start_node::Array, end_node::Array, link_length::Array, origin::Int, destination::Int)
 	@assert length(start_node)==length(end_node)
 	@assert length(start_node)==length(link_length)
 
-	graph = create_graph(start_node, end_node)
+	graph, distmx = create_graph(start_node, end_node, link_length)
 
-	state = dijkstra_shortest_paths(graph, link_length, origin)
+	state = dijkstra_shortest_paths(graph, origin, distmx)
 
 	path = get_path(state, origin, destination)
 	x = get_vector(path, start_node, end_node)

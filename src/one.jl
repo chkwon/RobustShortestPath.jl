@@ -5,7 +5,7 @@ function get_robust_path(start_node::Array, end_node::Array, c::Array, d::Array,
 	@assert length(start_node)==length(c)
 	@assert length(start_node)==length(d)
 
-	graph = create_graph(start_node, end_node)
+	no_arc = length(start_node)
 
 	dset = [sort(d, rev=true); 0]
 	best_obj = Inf
@@ -13,7 +13,6 @@ function get_robust_path(start_node::Array, end_node::Array, c::Array, d::Array,
 	best_x = []
 
 	# Constructing Lset as in Lee and Kwon (2014) http://dx.doi.org/10.1007/s10288-014-0270-7
-	no_arc = num_edges(graph)
 	k_max = round(Int, ceil((no_arc - Gamma)/2))
 
 	Lset = Array(Int, k_max+1)
@@ -46,5 +45,5 @@ function get_robust_path(start_node::Array, end_node::Array, c::Array, d::Array,
 
 	end
 
-	return best_path, best_x
+	return best_path, best_x, best_obj
 end

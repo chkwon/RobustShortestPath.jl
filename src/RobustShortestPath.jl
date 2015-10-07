@@ -2,7 +2,7 @@ module RobustShortestPath
 
 # package code goes here
 
-using Graphs
+using LightGraphs
 
 include("misc.jl")
 include("one.jl")
