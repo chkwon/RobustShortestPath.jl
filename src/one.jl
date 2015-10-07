@@ -46,5 +46,5 @@ function get_robust_path(start_node::Array, end_node::Array, c::Array, d::Array,
 
 	end
 
-	return best_path, best_x
+	return best_path, best_x, best_obj
 end

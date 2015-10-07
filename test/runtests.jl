@@ -62,9 +62,12 @@ println("Origin=$origin, Destination=$destination")
 println("----------------------------------------------------")
 println("Single Coefficient Case")
 # For each Gamma from 0 to 6, obtain the robust shortest path
-for Gamma=0:6
-	(robust_path, robust_x) = get_robust_path(start_node, end_node, cc, dd, Gamma, origin, destination)
-	println("Gamma=$Gamma: Robust Path from node $origin to node $destination is $(robust_path')")
+known_cost_solution_one = Dict(0 => 6060, 1=> 15024, 2=> 20864, 3=> 26604, 4=> 31293, 5=> 32291)
+for Gamma=0:5
+	robust_path, robust_x, worst_case_cost = get_robust_path(start_node, end_node, cc, dd, Gamma, origin, destination)
+	println("Gamma=$Gamma: Robust Path is $(robust_path') and the worst-case cost is $worst_case_cost.")
+
+    @assert worst_case_cost == known_cost_solution_one[Gamma]
 end
 
 
@@ -74,15 +77,14 @@ println("Two Coefficient Case")
 
 for Gamma_u=1:5
     for Gamma_v=1:5
-        (robust_path, robust_x, worst_case_cost) = get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v, origin, destination)
-        println("(Gamma_u,Gamma_v)=($Gamma_u,$Gamma_v): Robust Path is $(robust_path') and the worst-case cost is $worst_case_cost")
+        robust_path, robust_x, worst_case_cost = get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v, origin, destination)
+        println("(Gamma_u,Gamma_v)=($Gamma_u,$Gamma_v): Robust Path is $(robust_path') and the worst-case cost is $worst_case_cost.")
     end
 end
 
-
 test_Gamma_u = 5
 test_Gamma_v = 5
-(robust_path, robust_x, worst_case_cost) = get_robust_path_two(start_node, end_node, p, q, c, d, test_Gamma_u, test_Gamma_v, origin, destination)
+robust_path, robust_x, worst_case_cost = get_robust_path_two(start_node, end_node, p, q, c, d, test_Gamma_u, test_Gamma_v, origin, destination)
 
 @assert worst_case_cost==32291.0
 
