@@ -1,6 +1,6 @@
-The RSP.jl package is licensed under the MIT "Expat" License:
+The RobustShortestPath.jl package is licensed under the MIT "Expat" License:
 
-> Copyright (c) 2014: Changhyun Kwon.
+> Copyright (c) 2015: Changhyun Kwon.
 >
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the
