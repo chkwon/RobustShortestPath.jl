@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/chkwon/RobustShortestPath.jl.svg?branch=master)](https://travis-ci.org/chkwon/RobustShortestPath.jl)
 [![Coverage Status](https://coveralls.io/repos/chkwon/RobustShortestPath.jl/badge.svg)](https://coveralls.io/r/chkwon/RobustShortestPath.jl)
-[![RobustShortestPath](http://pkg.julialang.org/badges/RobustShortestPath_release.svg)](http://pkg.julialang.org/?pkg=RobustShortestPath&ver=release)
+[![RobustShortestPath](http://pkg.julialang.org/badges/RobustShortestPath_0.3.svg)](http://pkg.julialang.org/?pkg=RobustShortestPath&ver=0.3)
+[![RobustShortestPath](http://pkg.julialang.org/badges/RobustShortestPath_0.4.svg)](http://pkg.julialang.org/?pkg=RobustShortestPath&ver=0.4)
 
 Robust Shortest Path Finder for [the Julia Language](http://julialang.org).
 
@@ -102,11 +103,11 @@ using RobustShortestPath
 Gamma=3
 origin=1
 destination=15
-(robust_path, robust_x) = get_robust_path(start_node, end_node, c, d, Gamma, origin, destination)
+robust_path, robust_x, worst_case_cost = get_robust_path(start_node, end_node, c, d, Gamma, origin, destination)
 ```
 The result will look like:
 ```julia
-([1,4,8,12,15],[1,0,0,0,0,0,0,0,0,0  …  0,0,0,0,0,0,1,0,0,0])
+([1,4,8,12,15],[1,0,0,0,0,0,0,0,0,0  …  0,0,0,0,0,0,1,0,0,0],295)
 ```
 
 For a two-coefficient case as in [Kwon et al. (2013)](http://onlinelibrary.wiley.com/doi/10.1002/nav.21540/full):
@@ -116,7 +117,7 @@ Gamma_u=2
 Gamma_v=3
 origin=1
 destination=15
-(robust_path, robust_x, worst_case_cost) = get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v, origin, destination)
+robust_path, robust_x, worst_case_cost = get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v, origin, destination)
 ```
 The result should look like:
 ```julia
@@ -128,7 +129,7 @@ See [runtest.jl](https://github.com/chkwon/RobustShortestPath.jl/blob/master/tes
 
 # get_shortest_path
 
-This package also provides an interface to `dijkstra_shortest_paths` of `Graphs.jl`.
+This package also provides an interface to `dijkstra_shortest_paths` of `LightGraphs.jl`.
 
 ```julia
 path, x = get_shortest_path(start_node, end_node, link_length, origin, destination)
