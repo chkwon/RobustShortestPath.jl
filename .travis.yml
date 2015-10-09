@@ -11,7 +11,7 @@ notifications:
     email: false
 script:
     - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-    - julia -e 'Pkg.init(); Pkg.clone(pwd()); Pkg.add("LightGraphs"); Pkg.test("RobustShortestPath", converage=true)'
+    - julia -e 'Pkg.init(); Pkg.clone(pwd()); Pkg.add("LightGraphs"); Pkg.test("RobustShortestPath", coverage=true)'
     - julia -e 'Pkg.test("RobustShortestPath", coverage=true)'
 after_success:
     - echo $TRAVIS_JULIA_VERSION
