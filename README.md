@@ -1,9 +1,11 @@
 # RobustShortestPath.jl
 
-[![Build Status](https://travis-ci.org/chkwon/RobustShortestPath.jl.svg?branch=master)](https://travis-ci.org/chkwon/RobustShortestPath.jl)
-[![Coverage Status](https://coveralls.io/repos/chkwon/RobustShortestPath.jl/badge.svg)](https://coveralls.io/r/chkwon/RobustShortestPath.jl)
 [![RobustShortestPath](http://pkg.julialang.org/badges/RobustShortestPath_0.3.svg)](http://pkg.julialang.org/?pkg=RobustShortestPath&ver=0.3)
 [![RobustShortestPath](http://pkg.julialang.org/badges/RobustShortestPath_0.4.svg)](http://pkg.julialang.org/?pkg=RobustShortestPath&ver=0.4)
+
+[![Build Status](https://travis-ci.org/chkwon/RobustShortestPath.jl.svg?branch=master)](https://travis-ci.org/chkwon/RobustShortestPath.jl)
+[![Build Status](https://ci.appveyor.com/api/projects/status/2cp40umalarup09f?svg=true)](https://ci.appveyor.com/project/chkwon/robustshortestpath-jl)
+[![Coverage Status](https://coveralls.io/repos/chkwon/RobustShortestPath.jl/badge.svg)](https://coveralls.io/r/chkwon/RobustShortestPath.jl)
 
 Robust Shortest Path Finder for [the Julia Language](http://julialang.org).
 
