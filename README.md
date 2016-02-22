@@ -23,7 +23,6 @@ This provides an interface to Dijkstra's method from the [Graphs.jl](https://git
 julia> Pkg.add("RobustShortestPath")
 ```
 
-This will also install [Graphs.jl](https://github.com/JuliaLang/Graphs.jl), if you don't have it installed in your Julia system already.
 
 To check if works
 ```julia
