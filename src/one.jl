@@ -34,9 +34,10 @@ function get_robust_path(start_node::Array, end_node::Array, c::Array, d::Array,
 			break
 		end
 
-		(pp, xx) = get_shortest_path(start_node, end_node, link_cost, origin, destination)
-		current_obj = Gamma * theta + dot(link_cost, xx)
-
+		(pp, xx, ll) = get_shortest_path(start_node, end_node, link_cost, origin, destination)
+		# current_obj = Gamma * theta + dot(link_cost, xx)
+		current_obj = Gamma * theta + ll
+		
 		if current_obj < best_obj
 			best_obj = current_obj
 			best_path = pp

@@ -24,7 +24,9 @@ function get_shortest_path(start_node::Array, end_node::Array, link_length::Arra
 	path = get_path(state, origin, destination)
 	x = get_vector(path, start_node, end_node)
 
-	return path, x
+	len = state.dists[destination]
+
+	return path, x, len
 end
 
 function get_path(state, origin, destination)

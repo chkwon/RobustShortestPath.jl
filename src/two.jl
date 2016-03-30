@@ -145,8 +145,9 @@ function get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v,
 
 
     link_cost = p.*c + rho_mu
-    (pp, xx) = get_shortest_path(start_node, end_node, link_cost, origin, destination)
-    current_obj = Gamma_u*theta_u[k] + Gamma_v*theta_v[k] + dot(link_cost, xx)
+    (pp, xx, ll) = get_shortest_path(start_node, end_node, link_cost, origin, destination)
+    # current_obj = Gamma_u*theta_u[k] + Gamma_v*theta_v[k] + dot(link_cost, xx)
+    current_obj = Gamma_u*theta_u[k] + Gamma_v*theta_v[k] + ll
 
     if current_obj < best_obj
         best_obj = current_obj
