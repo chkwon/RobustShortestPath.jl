@@ -90,6 +90,3 @@ println(worst_case_cost)
 @assert worst_case_cost==32291.0
 
 
-
-
-#end
