@@ -15,7 +15,7 @@ function get_robust_path(start_node::Array, end_node::Array, c::Array, d::Array,
 	# Constructing Lset as in Lee and Kwon (2014) http://dx.doi.org/10.1007/s10288-014-0270-7
 	k_max = round(Int, ceil((no_arc - Gamma)/2))
 
-	Lset = Array{Int}(k_max+1)
+	Lset = Array{Int}(undef, k_max+1)
 	for k=1:k_max
 		Lset[k] = Gamma + 2*k-1
 	end
@@ -24,7 +24,7 @@ function get_robust_path(start_node::Array, end_node::Array, c::Array, d::Array,
 	# This for-loop examines the smallest theta first.
 	for i=length(Lset):-1:1
 		theta = dset[Lset[i]]
-		link_cost = c + max(d - theta, 0)
+		link_cost = c + max.(d .- theta, 0)
 
 		# println("$i : $theta : $(Gamma*theta) : $best_obj")
 
