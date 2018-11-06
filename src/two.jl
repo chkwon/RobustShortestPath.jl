@@ -1,9 +1,9 @@
 function get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v, origin, destination)
-  @assert length(start_node)==length(end_node)
-  @assert length(start_node)==length(p)
-  @assert length(start_node)==length(q)
-  @assert length(start_node)==length(c)
-  @assert length(start_node)==length(d)
+  @assert length(start_node) == length(end_node)
+  @assert length(start_node) == length(p)
+  @assert length(start_node) == length(q)
+  @assert length(start_node) == length(c)
+  @assert length(start_node) == length(d)
 
   no_arc = length(start_node)
 
@@ -13,13 +13,13 @@ function get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v,
   idx = sortperm(diag, rev=true)
   # Theta = Array((Float64, Float64),1)
   # Theta = Array{Tuple{Float64, Float64}}(1)
-  Theta = [(0.0,0.0)]
+  Theta = [(0.0, 0.0)]
 
   for t=1:no_arc
     ij = idx[t]
 
     # Step 1
-    Theta = [Theta; (0, p[ij]*d[ij]+q[ij]*d[ij])]
+    Theta = [Theta; (0, p[ij]*d[ij] + q[ij]*d[ij])]
 
 
     # Step 2
@@ -98,10 +98,10 @@ function get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v,
 
 
 
-  theta_u = zeros(size(Theta))
-  theta_v = zeros(size(Theta))
-  z_front = zeros(size(Theta))
-  for i=1:length(Theta)
+  theta_u = Array{Float64}(undef, length(Theta))
+  theta_v = Array{Float64}(undef, length(Theta))
+  z_front = Array{Float64}(undef, length(Theta))
+  for i in 1:length(Theta)
     theta_u[i] = Theta[i][1]
     theta_v[i] = Theta[i][2]
     z_front[i] = Gamma_u*theta_u[i] + Gamma_v*theta_v[i]
@@ -120,7 +120,7 @@ function get_robust_path_two(start_node, end_node, p, q, c, d, Gamma_u, Gamma_v,
     end
 
     rho_mu = zeros(no_arc)
-    for ij=1:no_arc
+    for ij in 1:no_arc
         qc = q[ij]*c[ij]
         pd = p[ij]*d[ij]
         qd = q[ij]*d[ij]

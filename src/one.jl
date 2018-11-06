@@ -1,9 +1,9 @@
 
 
 function get_robust_path(start_node::Array, end_node::Array, c::Array, d::Array, Gamma, origin, destination)
-	@assert length(start_node)==length(end_node)
-	@assert length(start_node)==length(c)
-	@assert length(start_node)==length(d)
+	@assert length(start_node) == length(end_node)
+	@assert length(start_node) == length(c)
+	@assert length(start_node) == length(d)
 
 	no_arc = length(start_node)
 

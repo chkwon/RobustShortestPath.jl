@@ -1,12 +1,12 @@
 function create_graph(start_node, end_node, link_length)
-	@assert length(start_node)==length(end_node)
+	@assert length(start_node) == length(end_node)
 
 	no_node = max(maximum(start_node), maximum(end_node))
 	no_arc = length(start_node)
 
 	graph = Graph(no_node)
 	distmx = Inf*ones(no_node, no_node)
-	for i=1:no_arc
+	for i in 1:no_arc
 		add_edge!(graph, start_node[i], end_node[i])
 		distmx[start_node[i], end_node[i]] = link_length[i]
 	end
