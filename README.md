@@ -1,10 +1,5 @@
 # RobustShortestPath.jl
 
-[![RobustShortestPath](http://pkg.julialang.org/badges/RobustShortestPath_0.5.svg)](http://pkg.julialang.org/?pkg=RobustShortestPath)
-[![RobustShortestPath](http://pkg.julialang.org/badges/RobustShortestPath_0.6.svg)](http://pkg.julialang.org/?pkg=RobustShortestPath)
-[![RobustShortestPath](http://pkg.julialang.org/badges/RobustShortestPath_0.7.svg)](http://pkg.julialang.org/?pkg=RobustShortestPath)
-
-
 [![Build Status](https://travis-ci.org/chkwon/RobustShortestPath.jl.svg?branch=master)](https://travis-ci.org/chkwon/RobustShortestPath.jl)
 [![Build Status](https://ci.appveyor.com/api/projects/status/2cp40umalarup09f?svg=true)](https://ci.appveyor.com/project/chkwon/robustshortestpath-jl)
 [![Coverage Status](https://coveralls.io/repos/chkwon/RobustShortestPath.jl/badge.svg)](https://coveralls.io/r/chkwon/RobustShortestPath.jl)
