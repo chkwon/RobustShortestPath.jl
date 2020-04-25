@@ -1,0 +1,10 @@
+name = "RobustShortestPath"
+uuid = "16f6c422-f222-508b-b0da-15025777bca7"
+version = "0.4.0"
+
+[deps]
+LightGraphs = "093fc24a-ae57-5d10-9952-331d41423f4d"
+
+[compat]
+LightGraphs = "1"
+julia = "1"
