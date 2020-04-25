@@ -3,17 +3,16 @@ os:
     - linux
     - osx
 julia:
-    - 0.7
-    - 1.0
+    - 1.3
     - nightly
 matrix:
   allow_failures:
     - julia: nightly
 notifications:
     email: false
-script:
-    - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-    - julia -e 'using Pkg; Pkg.clone(pwd()); Pkg.test("RobustShortestPath", coverage=true)'
+# script:
+#     - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
+#     - julia -e 'using Pkg; Pkg.clone(pwd()); Pkg.test("RobustShortestPath", coverage=true)'
 after_success:
     - echo $TRAVIS_JULIA_VERSION
     - julia -e 'using Pkg; cd(Pkg.dir("RobustShortestPath")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
