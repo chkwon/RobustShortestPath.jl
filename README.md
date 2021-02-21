@@ -1,7 +1,7 @@
 # RobustShortestPath.jl
 
-[![Build Status](https://travis-ci.org/chkwon/RobustShortestPath.jl.svg?branch=master)](https://travis-ci.org/chkwon/RobustShortestPath.jl)
-[![Coverage Status](https://coveralls.io/repos/chkwon/RobustShortestPath.jl/badge.svg)](https://coveralls.io/r/chkwon/RobustShortestPath.jl)
+[![Build Status](https://github.com/chkwon/RobustShortestPath.jl/workflows/CI/badge.svg?branch=master)](https://github.com/chkwon/RobustShortestPath.jl/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/chkwon/RobustShortestPath.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/chkwon/RobustShortestPath.jl)
 
 Robust Shortest Path Finder for [the Julia Language](http://julialang.org).
 
